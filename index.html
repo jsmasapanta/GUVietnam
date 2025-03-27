@@ -18,112 +18,116 @@
   <form id="cuestionario"></form>
 
   <script>
-    const preguntas = [
+const preguntas = [
+["¿Quién fue el líder del Viet Minh y fundador del Partido Comunista de Vietnam?", "Ho Chi Minh", ["Ho Chi Minh", "Batalla de Hue", "Francia"]],
+["¿Qué país colonizó Vietnam entre 1862 y 1954?", "Francia", ["ONU", "Estados Unidos", "Francia"]],
+["¿Qué imperio ocupó Vietnam antes de la colonización francesa?", "Imperio Chino", ["Imperio Chino", "Francia", "Revolución Cultural"]],
+["¿Qué país invadió Tonkín en 1940?", "Japón", ["Doctrina Truman", "Japón", "Guerra convencional"]],
+["¿Qué evento motivó a Estados Unidos a involucrarse militarmente en Vietnam?", "Incidente del Golfo de Tonkin", ["Plan Marshall", "Saigón", "Incidente del Golfo de Tonkin"]],
+["¿Qué acuerdo dividió Vietnam en dos en 1954?", "Los Acuerdos de Ginebra", ["Plan Marshall", "Guerra Fría", "Los Acuerdos de Ginebra"]],
+["¿Qué nombre recibió la alianza entre el Partido Comunista Indochino y los grupos nacionalistas en 1941?", "Viet Minh", ["Viet Minh", "Mao Zedong", "URSS"]],
+["¿Cuál fue la principal táctica empleada por Vietnam del Norte durante la guerra?", "Guerra de guerrillas", ["China", "URSS", "Guerra de guerrillas"]],
+["¿Qué ruta utilizó Vietnam del Norte para abastecer a sus fuerzas en el sur?", "Ruta Ho Chi Minh", ["Ruta Ho Chi Minh", "ONU", "Kuwait"]],
+["¿Qué ofensiva marcó un punto de inflexión en la guerra y minó la moral estadounidense?", "Ofensiva del Tet", ["Doctrina Truman", "Ofensiva del Tet", "Corea del Norte"]],
+["¿Cuál fue la batalla urbana más significativa durante la Ofensiva del Tet?", "Batalla de Hue", ["Guerra convencional", "Batalla de Hue", "Kuwait"]],
+["¿Qué ejército comunista apoyó al Viet Cong desde Camboya?", "Jemeres Rojos", ["Laos", "Jemeres Rojos", "URSS"]],
+["¿Qué tipo de operaciones llevaban a cabo las fuerzas estadounidenses en zonas rurales?", "Búsqueda y destrucción", ["Búsqueda y destrucción", "Francia", "Laos"]],
+["¿Qué sustancia química usó Estados Unidos con efectos devastadores en el medio ambiente y la salud?", "Agente Naranja", ["Agente Naranja", "Frente Nacional", "Corea del Norte"]],
+["¿Qué organización fue el antecedente del Ejército de Vietnam del Norte (EVN)?", "Viet Minh", ["ONU", "Mao Zedong", "Viet Minh"]],
+["¿Cómo se llamó el grupo guerrillero comunista que operaba en Vietnam del Sur?", "Viet Cong", ["ONU", "Frente Nacional", "Viet Cong"]],
+["¿Qué tipo de guerra enfrentó Estados Unidos que limitó la efectividad de su tecnología avanzada?", "Guerra de guerrillas", ["Kuwait", "Guerra de guerrillas", "Frente Nacional"]],
+["¿Qué régimen se estableció tras la reunificación de Vietnam en 1975?", "República Socialista de Vietnam", ["Plan Marshall", "República Socialista de Vietnam", "Francia"]],
+["¿Qué doctrina geopolítica sostenía que quien dominara el Heartland dominaría el mundo?", "Mackinder", ["Jordania", "Estados Unidos", "Mackinder"]],
+["¿Qué país apoyó inicialmente a Francia en su lucha contra el comunismo en Vietnam?", "Estados Unidos", ["Ngo Dinh Diem", "Estados Unidos", "Guerra convencional"]],
+["¿Qué año se anunció la creación del Estado independiente de Vietnam?", "1945", ["1945", "Saigón", "Doctrina Truman"]],
+["¿Qué país apoyó al Viet Minh junto con la URSS?", "China comunista", ["Guerra convencional", "ONU", "China comunista"]],
+["¿Qué grupo disolvió el Viet Minh en 1960 para formar el EVN?", "Partido Comunista de Vietnam", ["Ngo Dinh Diem", "Saigón", "Partido Comunista de Vietnam"]],
+["¿Qué teoría geopolítica justificó la intervención estadounidense por miedo al 'efecto dominó'?", "Teoría del dominó", ["Kuwait", "Teoría del dominó", "Francia"]],
+["¿Qué países comunistas apoyaron a Vietnam del Norte además de la URSS y China?", "Corea del Norte y Cuba", ["Corea del Norte y Cuba", "Estados Unidos", "Tratado de Versalles"]],
+["¿Qué países no comunistas apoyaron a Vietnam del Sur además de EE.UU.?", "Australia, Corea del Sur, Filipinas, Nueva Zelanda, Tailandia y Taiwán", ["Plan Marshall", "Australia, Corea del Sur, Filipinas, Nueva Zelanda, Tailandia y Taiwán", "Camboya"]],
+["¿Qué tipo de armamento usaron los ataques del Viet Cong durante la Ofensiva del Tet?", "Morteros, cohetes y asaltos terrestres", ["Corea del Norte", "Guerra convencional", "Morteros, cohetes y asaltos terrestres"]],
+["¿Qué factor influyó en la pérdida de apoyo interno a la guerra por parte de la sociedad estadounidense?", "La guerra mediática y el impacto de las imágenes", ["La guerra mediática y el impacto de las imágenes", "Guerra Fría", "Francia"]],
+["¿Qué recursos logísticos eran atacados con frecuencia mediante emboscadas por el Viet Cong?", "Convoyes de suministros y patrullas", ["URSS", "Convoyes de suministros y patrullas", "Francia"]],
+["¿Qué tipo de educación impuso Francia durante su dominio en Vietnam?", "Educación moderna occidental", ["Educación moderna occidental", "Francia", "Saigón"]],
+["¿Qué religión fue promovida por los franceses en Vietnam?", "Cristianismo", ["Ngo Dinh Diem", "Doctrina Truman", "Cristianismo"]],
+["¿Qué emperador vietnamita cedió parte del país a Francia?", "Tu Duc", ["Tu Duc", "Plan Marshall", "Frente Nacional"]],
+["¿Qué año se rinde Japón a los aliados, retirándose de Indochina?", "1945", ["Mao Zedong", "1945", "Guerra convencional"]],
+["¿Qué acontecimiento global terminó con la disolución de la Unión Soviética?", "La Guerra Fría", ["URSS", "La Guerra Fría", "Estados Unidos"]],
+["¿Qué fuerza militar inició sus actividades en Vietnam del Sur como guerrilla comunista?", "Viet Cong (FNL)", ["Guerra convencional", "Viet Cong (FNL)", "Ngo Dinh Diem"]],
+["¿Qué técnica usaba EE.UU. para cortar líneas de suministro del enemigo?", "Bombardeos estratégicos y tácticos", ["Doctrina Truman", "ONU", "Bombardeos estratégicos y tácticos"]],
+["¿Qué recurso empleó EE.UU. para el transporte y apoyo aéreo cercano?", "Helicópteros", ["ONU", "Guerra convencional", "Helicópteros"]],
+["¿Qué país tomó el control de China en 1949, influyendo en la geopolítica asiática?", "Mao Zedong", ["Corea del Norte", "Mao Zedong", "Plan Marshall"]],
+["¿Qué guerra se desarrolló entre 1946 y 1954?", "Primera Guerra de Indochina", ["China", "Guerra Fría", "Primera Guerra de Indochina"]],
+["¿Cuántos soldados estadounidenses murieron durante la Guerra de Vietnam?", "58.000 soldados", ["Frente Nacional", "58.000 soldados", "Revolución Cultural"]],
+["¿Qué país apoyaba militar y económicamente a Vietnam del Sur?", "Estados Unidos", ["Estados Unidos", "Guerra Fría", "Batalla de Hue"]],
+["¿Qué movimiento comunista operaba dentro de Vietnam del Sur?", "Viet Cong", ["Viet Cong", "Guerra convencional", "Laos"]],
+["¿Qué teoría geopolítica justificaba la intervención de EE.UU. en Vietnam?", "Teoría del dominó", ["Teoría del dominó", "Guerra convencional", "Estados Unidos"]],
+["¿Qué ofensiva marcó un punto de inflexión en la guerra en 1968?", "Ofensiva del Tet", ["Corea del Norte", "Tratado de Versalles", "Ofensiva del Tet"]],
+["¿Qué tipo de guerra usaban los vietnamitas del Norte y el Viet Cong contra EE.UU.?", "Guerra de guerrillas", ["Guerra Fría", "Guerra de guerrillas", "Doctrina Truman"]],
+["¿Qué sustancia química usó EE.UU. para defoliar la selva vietnamita?", "Agente Naranja", ["Mao Zedong", "Agente Naranja", "China"]],
+["¿Qué ruta usaba Vietnam del Norte para abastecer a sus fuerzas en el sur?", "Ruta Ho Chi Minh", ["Batalla de Hue", "China", "Ruta Ho Chi Minh"]],
+["¿Qué evento marcó el fin definitivo del conflicto en 1975?", "La caída de Saigón", ["La caída de Saigón", "Mao Zedong", "Tratado de Versalles"]],
+["¿Qué presidente estadounidense intensificó la guerra enviando más tropas en 1965?", "Lyndon B. Johnson", ["Corea del Norte", "Lyndon B. Johnson", "Francia"]],
+["¿Qué nombre tomó Vietnam tras la reunificación del país en 1976?", "República Socialista de Vietnam", ["Ngo Dinh Diem", "Corea del Norte", "República Socialista de Vietnam"]],
+["¿Cuál fue una de las consecuencias internacionales del fracaso estadounidense en Vietnam?", "Pérdida de prestigio global y crítica al intervencionismo militar", ["Batalla de Hue", "Revolución Cultural", "Pérdida de prestigio global y crítica al intervencionismo militar"]],
+["¿Cuál fue el costo humano estimado para EE.UU. en soldados muertos?", "Aproximadamente 58.000", ["Aproximadamente 58.000", "Saigón", "Batalla de Hue"]],
+["¿Qué imperio colonizó Vietnam antes del siglo XX?", "Francia", ["Francia", "Laos", "ONU"]],
+["¿Qué tratado internacional dividió Vietnam en dos en 1954?", "Acuerdos de Ginebra", ["Revolución Cultural", "China", "Acuerdos de Ginebra"]],
+["¿Qué país comunista asiático apoyó a Vietnam del Norte junto con la URSS?", "China", ["Ngo Dinh Diem", "China", "Frente Nacional"]],
+["¿Qué organización lideró la lucha por la independencia vietnamita contra Francia?", "El Viet Minh", ["Tratado de Versalles", "Guerra Fría", "El Viet Minh"]],
+["¿Quién fue el fundador y líder del Viet Minh?", "Ho Chi Minh", ["Mao Zedong", "Estados Unidos", "Ho Chi Minh"]],
+["¿Qué batalla ganó el Viet Minh en 1954 contra los franceses?", "Batalla de Dien Bien Phu", ["Guerra Fría", "ONU", "Batalla de Dien Bien Phu"]],
+["¿Qué acuerdo internacional dividió Vietnam tras la victoria del Viet Minh?", "Acuerdos de Ginebra", ["Batalla de Hue", "Guerra convencional", "Acuerdos de Ginebra"]],
+["¿Qué pasó con el Viet Minh tras la independencia del norte?", "Fue absorbido por el gobierno de Vietnam del Norte", ["Ngo Dinh Diem", "Fue absorbido por el gobierno de Vietnam del Norte", "Laos"]],
+["¿Qué ideología promovía el Viet Minh?", "Comunismo nacionalista", ["Comunismo nacionalista", "URSS", "ONU"]],
+["¿Contra qué potencia colonial luchó el Viet Minh en la Primera Guerra de Indochina?", "Francia", ["Francia", "Camboya", "Kuwait"]],
+["¿Qué evento político pactado en 1954 debía ocurrir en 1956?", "Elecciones para la reunificación de Vietnam", ["Elecciones para la reunificación de Vietnam", "Jordania", "Frente Nacional"]],
+["¿Por qué no se realizaron las elecciones de 1956 en Vietnam?", "Vietnam del Sur se negó, con apoyo de EE.UU.", ["Frente Nacional", "Revolución Cultural", "Vietnam del Sur se negó, con apoyo de EE.UU."]],
+["¿Qué grupo comunista se fortaleció en Vietnam del Sur tras la cancelación de las elecciones?", "Viet Cong", ["Batalla de Hue", "Camboya", "Viet Cong"]],
+["¿Qué líder vietnamita se negó a participar en las elecciones de 1956?", "Ngo Dinh Diem", ["Estados Unidos", "Ngo Dinh Diem", "Plan Marshall"]],
+["¿Qué grupo guerrillero comunista fue creado en Vietnam del Sur en 1960?", "El Viet Cong o Frente Nacional de Liberación de Vietnam", ["Laos", "ONU", "El Viet Cong o Frente Nacional de Liberación de Vietnam"]],
+["¿Qué incidente ocurrió en 1964 y justificó la intervención militar directa de EE.UU.?", "El Incidente del Golfo de Tonkín", ["Ngo Dinh Diem", "El Incidente del Golfo de Tonkín", "Doctrina Truman"]],
+["¿Qué consecuencia tuvo el Incidente del Golfo de Tonkín?", "EE.UU. autorizó el uso de la fuerza militar en Vietnam", ["EE.UU. autorizó el uso de la fuerza militar en Vietnam", "Camboya", "Jordania"]],
+["¿En qué año comenzaron a llegar las tropas estadounidenses en gran escala a Vietnam?", "1965", ["Laos", "1965", "Batalla de Hue"]],
+["¿Qué ciudad recibió a los primeros marines de EE.UU. en 1965?", "Da Nang", ["Da Nang", "Ngo Dinh Diem", "Saigón"]],
+["¿Qué ofensiva sorpresa lanzaron las fuerzas comunistas en 1968 durante el Año Nuevo Lunar?", "La Ofensiva del Tet", ["La Ofensiva del Tet", "URSS", "Kuwait"]],
+["¿Qué efecto tuvo la Ofensiva del Tet en la opinión pública estadounidense?", "Minó el apoyo popular a la guerra", ["Corea del Norte", "Estados Unidos", "Minó el apoyo popular a la guerra"]],
+["¿Qué ciudad fue duramente combatida durante la Ofensiva del Tet, incluso casa por casa?", "Hue", ["Hue", "Plan Marshall", "Laos"]],
+["¿Qué acuerdo puso fin a la participación de Estados Unidos en la Guerra de Vietnam?", "Los Acuerdos de Paz de París", ["Los Acuerdos de Paz de París", "Guerra Fría", "ONU"]],
+["¿En qué año se firmaron los Acuerdos de París?", "1973", ["Saigón", "ONU", "1973"]],
+["¿Qué compromiso principal asumió EE.UU. en los Acuerdos de París?", "Retirar todas sus tropas de Vietnam", ["Retirar todas sus tropas de Vietnam", "Corea del Norte", "Ngo Dinh Diem"]],
+["¿Qué ciudad fue capturada por el ejército del Norte el 30 de abril de 1975?", "Saigón", ["Saigón", "China", "Tratado de Versalles"]],
+["¿Qué evento marcó el fin de la Guerra de Vietnam en 1975?", "La caída de Saigón", ["Francia", "La caída de Saigón", "Guerra Fría"]],
+["¿Qué nombre tomó el país tras la reunificación en 1976?", "República Socialista de Vietnam", ["Estados Unidos", "República Socialista de Vietnam", "ONU"]],
 
-  ["¿Quién fue el líder del Viet Minh y fundador del Partido Comunista de Vietnam?", "Ho Chi Minh"],
-  ["¿Qué país colonizó Vietnam entre 1862 y 1954?", "Francia"],
-  ["¿Qué imperio ocupó Vietnam antes de la colonización francesa?", "Imperio Chino"],
-  ["¿Qué país invadió Tonkín en 1940?", "Japón"],
-  ["¿Qué evento motivó a Estados Unidos a involucrarse militarmente en Vietnam?", "Incidente del Golfo de Tonkin"],
-  ["¿Qué acuerdo dividió Vietnam en dos en 1954?", "Los Acuerdos de Ginebra"],
-  ["¿Qué nombre recibió la alianza entre el Partido Comunista Indochino y los grupos nacionalistas en 1941?", "Viet Minh"],
-  ["¿Cuál fue la principal táctica empleada por Vietnam del Norte durante la guerra?", "Guerra de guerrillas"],
-  ["¿Qué ruta utilizó Vietnam del Norte para abastecer a sus fuerzas en el sur?", "Ruta Ho Chi Minh"],
-  ["¿Qué ofensiva marcó un punto de inflexión en la guerra y minó la moral estadounidense?", "Ofensiva del Tet"],
-  ["¿Cuál fue la batalla urbana más significativa durante la Ofensiva del Tet?", "Batalla de Hue"],
-  ["¿Qué ejército comunista apoyó al Viet Cong desde Camboya?", "Jemeres Rojos"],
-  ["¿Qué tipo de operaciones llevaban a cabo las fuerzas estadounidenses en zonas rurales?", "Búsqueda y destrucción"],
-  ["¿Qué sustancia química usó Estados Unidos con efectos devastadores en el medio ambiente y la salud?", "Agente Naranja"],
-  ["¿Qué organización fue el antecedente del Ejército de Vietnam del Norte (EVN)?", "Viet Minh"],
-  ["¿Cómo se llamó el grupo guerrillero comunista que operaba en Vietnam del Sur?", "Viet Cong"],
-  ["¿Qué tipo de guerra enfrentó Estados Unidos que limitó la efectividad de su tecnología avanzada?", "Guerra de guerrillas"],
-  ["¿Qué régimen se estableció tras la reunificación de Vietnam en 1975?", "República Socialista de Vietnam"],
-  ["¿Qué doctrina geopolítica sostenía que quien dominara el Heartland dominaría el mundo?", "Mackinder"],
-  ["¿Qué país apoyó inicialmente a Francia en su lucha contra el comunismo en Vietnam?", "Estados Unidos"],
-  ["¿Qué año se anunció la creación del Estado independiente de Vietnam?", "1945"],
-  ["¿Qué país apoyó al Viet Minh junto con la URSS?", "China comunista"],
-  ["¿Qué grupo disolvió el Viet Minh en 1960 para formar el EVN?", "Partido Comunista de Vietnam"],
-  ["¿Qué teoría geopolítica justificó la intervención estadounidense por miedo al 'efecto dominó'?", "Teoría del dominó"],
-  ["¿Qué países comunistas apoyaron a Vietnam del Norte además de la URSS y China?", "Corea del Norte y Cuba"],
-  ["¿Qué países no comunistas apoyaron a Vietnam del Sur además de EE.UU.?", "Australia, Corea del Sur, Filipinas, Nueva Zelanda, Tailandia y Taiwán"],
-  ["¿Qué tipo de armamento usaron los ataques del Viet Cong durante la Ofensiva del Tet?", "Morteros, cohetes y asaltos terrestres"],
-  ["¿Qué factor influyó en la pérdida de apoyo interno a la guerra por parte de la sociedad estadounidense?", "La guerra mediática y el impacto de las imágenes"],
-  ["¿Qué recursos logísticos eran atacados con frecuencia mediante emboscadas por el Viet Cong?", "Convoyes de suministros y patrullas"],
-  ["¿Qué tipo de educación impuso Francia durante su dominio en Vietnam?", "Educación moderna occidental"],
-  ["¿Qué religión fue promovida por los franceses en Vietnam?", "Cristianismo"],
-  ["¿Qué emperador vietnamita cedió parte del país a Francia?", "Tu Duc"],
-  ["¿Qué año se rinde Japón a los aliados, retirándose de Indochina?", "1945"],
-  ["¿Qué acontecimiento global terminó con la disolución de la Unión Soviética?", "La Guerra Fría"],
-  ["¿Qué fuerza militar inició sus actividades en Vietnam del Sur como guerrilla comunista?", "Viet Cong (FNL)"],
-  ["¿Qué técnica usaba EE.UU. para cortar líneas de suministro del enemigo?", "Bombardeos estratégicos y tácticos"],
-  ["¿Qué recurso empleó EE.UU. para el transporte y apoyo aéreo cercano?", "Helicópteros"],
-  ["¿Qué país tomó el control de China en 1949, influyendo en la geopolítica asiática?", "Mao Zedong"],
-  ["¿Qué guerra se desarrolló entre 1946 y 1954?", "Primera Guerra de Indochina"],
-  ["¿Cuántos soldados estadounidenses murieron durante la Guerra de Vietnam?", "58.000 soldados"], , // <-- Agrega una coma aquí
-  ["¿Qué país apoyaba militar y económicamente a Vietnam del Sur?", "Estados Unidos"],
-  ["¿Qué movimiento comunista operaba dentro de Vietnam del Sur?", "Viet Cong"],
-  ["¿Qué teoría geopolítica justificaba la intervención de EE.UU. en Vietnam?", "Teoría del dominó"],
-  ["¿Qué ofensiva marcó un punto de inflexión en la guerra en 1968?", "Ofensiva del Tet"],
-  ["¿Qué tipo de guerra usaban los vietnamitas del Norte y el Viet Cong contra EE.UU.?", "Guerra de guerrillas"],
-  ["¿Qué sustancia química usó EE.UU. para defoliar la selva vietnamita?", "Agente Naranja"],
-  ["¿Qué ruta usaba Vietnam del Norte para abastecer a sus fuerzas en el sur?", "Ruta Ho Chi Minh"],
-  ["¿Qué evento marcó el fin definitivo del conflicto en 1975?", "La caída de Saigón"],
-  ["¿Qué presidente estadounidense intensificó la guerra enviando más tropas en 1965?", "Lyndon B. Johnson"],
-  ["¿Qué nombre tomó Vietnam tras la reunificación del país en 1976?", "República Socialista de Vietnam"],
-  ["¿Cuál fue una de las consecuencias internacionales del fracaso estadounidense en Vietnam?", "Pérdida de prestigio global y crítica al intervencionismo militar"],
-  ["¿Cuál fue el costo humano estimado para EE.UU. en soldados muertos?", "Aproximadamente 58.000"],
-  ["¿Qué imperio colonizó Vietnam antes del siglo XX?", "Francia"],
-  ["¿Qué tratado internacional dividió Vietnam en dos en 1954?", "Acuerdos de Ginebra"],
-  ["¿Qué país comunista asiático apoyó a Vietnam del Norte junto con la URSS?", "China"],
-  ["¿Qué organización lideró la lucha por la independencia vietnamita contra Francia?", "El Viet Minh"],
-  ["¿Quién fue el fundador y líder del Viet Minh?", "Ho Chi Minh"],
-  ["¿Qué batalla ganó el Viet Minh en 1954 contra los franceses?", "Batalla de Dien Bien Phu"],
-  ["¿Qué acuerdo internacional dividió Vietnam tras la victoria del Viet Minh?", "Acuerdos de Ginebra"],
-  ["¿Qué pasó con el Viet Minh tras la independencia del norte?", "Fue absorbido por el gobierno de Vietnam del Norte"],
-  ["¿Qué ideología promovía el Viet Minh?", "Comunismo nacionalista"],
-  ["¿Contra qué potencia colonial luchó el Viet Minh en la Primera Guerra de Indochina?", "Francia"],
-  ["¿Qué evento político pactado en 1954 debía ocurrir en 1956?", "Elecciones para la reunificación de Vietnam"],
-  ["¿Por qué no se realizaron las elecciones de 1956 en Vietnam?", "Vietnam del Sur se negó, con apoyo de EE.UU."],
-  ["¿Qué grupo comunista se fortaleció en Vietnam del Sur tras la cancelación de las elecciones?", "Viet Cong"],
-  ["¿Qué líder vietnamita se negó a participar en las elecciones de 1956?", "Ngo Dinh Diem"],
-  ["¿Qué grupo guerrillero comunista fue creado en Vietnam del Sur en 1960?", "El Viet Cong o Frente Nacional de Liberación de Vietnam"],
-  ["¿Qué incidente ocurrió en 1964 y justificó la intervención militar directa de EE.UU.?", "El Incidente del Golfo de Tonkín"],
-  ["¿Qué consecuencia tuvo el Incidente del Golfo de Tonkín?", "EE.UU. autorizó el uso de la fuerza militar en Vietnam"],
-  ["¿En qué año comenzaron a llegar las tropas estadounidenses en gran escala a Vietnam?", "1965"],
-  ["¿Qué ciudad recibió a los primeros marines de EE.UU. en 1965?", "Da Nang"],
-  ["¿Qué ofensiva sorpresa lanzaron las fuerzas comunistas en 1968 durante el Año Nuevo Lunar?", "La Ofensiva del Tet"],
-  ["¿Qué efecto tuvo la Ofensiva del Tet en la opinión pública estadounidense?", "Minó el apoyo popular a la guerra"],
-  ["¿Qué ciudad fue duramente combatida durante la Ofensiva del Tet, incluso casa por casa?", "Hue"],
-  ["¿Qué acuerdo puso fin a la participación de Estados Unidos en la Guerra de Vietnam?", "Los Acuerdos de Paz de París"],
-  ["¿En qué año se firmaron los Acuerdos de París?", "1973"],
-  ["¿Qué compromiso principal asumió EE.UU. en los Acuerdos de París?", "Retirar todas sus tropas de Vietnam"],
-  ["¿Qué ciudad fue capturada por el ejército del Norte el 30 de abril de 1975?", "Saigón"],
-  ["¿Qué evento marcó el fin de la Guerra de Vietnam en 1975?", "La caída de Saigón"],
-  ["¿Qué nombre tomó el país tras la reunificación en 1976?", "República Socialista de Vietnam"]
 ];
 
-
-    
-
-
     const form = document.getElementById("cuestionario");
-    preguntas.forEach(([pregunta], i) => {
+    preguntas.forEach(([pregunta, respuestaCorrecta, opciones], i) => {
       form.innerHTML += `
         <div class="pregunta">
           <label><strong>${i + 1}. ${pregunta}</strong></label><br>
-          <input type="text" class="respuesta" id="respuesta${i}">
-          <button type="button" onclick="verificarRespuesta(${i})">Verificar</button>
+          ${opciones
+            .map(
+              (opcion, j) =>
+                `<label><input type="radio" name="respuesta${i}" value="${opcion}"> ${opcion}</label><br>`
+            )
+            .join("")}
+          <button type="button" onclick="verificarRespuesta(${i}, '${respuestaCorrecta}')">Verificar</button>
           <div id="feedback${i}"></div>
         </div>
       `;
     });
 
-    function verificarRespuesta(index) {
-      const userInput = document.getElementById(`respuesta${index}`).value.trim();
-      const feedback = document.getElementById(`feedback${index}`);
-      const respuestaCorrecta = preguntas[index][1];
+    function verificarRespuesta(index, respuestaCorrecta) {
+      const opciones = document.getElementsByName(`respuesta${index}`);
+      let seleccion = "";
+      opciones.forEach((opcion) => {
+        if (opcion.checked) seleccion = opcion.value;
+      });
 
-      if (userInput === respuestaCorrecta) {
+      const feedback = document.getElementById(`feedback${index}`);
+      if (seleccion === respuestaCorrecta) {
         feedback.innerHTML = "✅ <span class='correcto'>Correcto</span>";
       } else {
         feedback.innerHTML = `❌ <span class='incorrecto'>Incorrecto. Respuesta esperada: ${respuestaCorrecta}</span>`;
